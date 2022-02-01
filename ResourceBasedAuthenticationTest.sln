@@ -2,6 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceBasedAuthenticationTest", "ResourceBasedAuthenticationTest\ResourceBasedAuthenticationTest.csproj", "{78F7292F-D2A2-4489-8FFC-B8599F1273B1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{D0D02757-4DD1-4BF6-8154-2E04867B0A80}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
