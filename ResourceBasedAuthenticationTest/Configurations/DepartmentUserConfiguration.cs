@@ -12,8 +12,8 @@ namespace ResourceBasedAuthenticationTest.Configurations
             builder.ToTable("department_user");
             builder.ConfigureBaseEntity();
 
-            builder.Property(du => du.DepartmentId).HasColumnName("department_id");
-            builder.Property(du => du.UserId).HasColumnName("user_id");
+            builder.Property(du => du.DepartmentId).HasColumnName("department_id").IsRequired();
+            builder.Property(du => du.UserId).HasColumnName("user_id").IsRequired();
             
             builder.HasIndex(du => new { du.DepartmentId, du.UserId }).IsUnique();
         }

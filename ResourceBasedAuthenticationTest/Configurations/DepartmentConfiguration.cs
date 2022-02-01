@@ -11,7 +11,7 @@ namespace ResourceBasedAuthenticationTest.Configurations
             builder.ToTable("department");
             builder.ConfigureBaseEntity();
             
-            builder.Property(d => d.Name).HasColumnName("name");
+            builder.Property(d => d.Name).HasColumnName("name").IsRequired();
 
             builder
                 .HasMany<DepartmentUser>()

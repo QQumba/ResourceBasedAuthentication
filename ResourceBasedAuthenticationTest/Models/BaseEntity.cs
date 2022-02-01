@@ -1,10 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
 
 namespace ResourceBasedAuthenticationTest.Models
 {
     public abstract class BaseEntity
     {
-        [Column("id")]
         public int Id { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+
+        public DateTime UpdatedAt { get; set; }
+
+        public bool IsSoftDeleted { get; set; }
     }
 }

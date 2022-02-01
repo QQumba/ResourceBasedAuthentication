@@ -11,15 +11,17 @@ namespace ResourceBasedAuthenticationTest.Configurations
             builder.ToTable("user");
             builder.ConfigureBaseEntity();
 
-            builder.Property(u => u.Name).HasColumnName("name");
-            builder.Property(u => u.Login).HasColumnName("login");
-            
+            builder.Property(u => u.Name).HasColumnName("name").IsRequired();
+            builder.Property(u => u.Login).HasColumnName("login").IsRequired();
+
             builder
                 .HasMany<DepartmentUser>()
                 .WithOne(du => du.User)
                 .HasForeignKey(du => du.UserId)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasIndex(u => u.Login).IsUnique();
         }
     }
 }

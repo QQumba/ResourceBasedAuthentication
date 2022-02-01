@@ -36,11 +36,13 @@ namespace ResourceBasedAuthenticationTest.Controllers.EntityControllers
         [HttpGet("{departmentId:int}")]
         public async Task<ActionResult<IEnumerable<User>>> GetDepartmentUsers([FromRoute] int departmentId)
         {
-            var users = await _db.DepartmentUsers.Where(du => du.Department.Id == departmentId)
-                .Include(du => du.Department)
-                .Select(du => du.User)
-                .ToListAsync();
+            // var users = await _db.DepartmentUsers.Where(du => du.Department.Id == departmentId)
+            //     .Include(du => du.Department)
+            //     .Select(du => du.User)
+            //     .ToListAsync();
 
+            var users = await _db.GetDepartmentUsers(departmentId).ToListAsync();
+            
             return Ok(users);
         }
 
