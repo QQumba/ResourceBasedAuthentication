@@ -1,7 +1,5 @@
 # How to configure db connection
 
----
-
 Create new `appsetting.{MACHINE_NAME}.json` file in `ResourceBasedAuthenticationTest`
 with following content:
 
